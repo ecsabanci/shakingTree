@@ -1,6 +1,6 @@
 # Shaking Tree App
 
-This project was done with React Hooks, with using state-setState and props. 
+This project was done with React, with using state-setState and props. 
 Also, I used Gulp.js to write SCSS.
 
 
