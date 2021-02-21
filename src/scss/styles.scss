@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.Tree {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 550px;
+    height: 550px;
+    background-color: rgb(169, 233, 169);
+
+
+    &-shake {
+        animation: shake 0.5s;
+        animation-iteration-count: 3;
+    }
+
+    #APPLE {
+        position: absolute;
+        top: 10vh;
+        left: 29vw;
+    }
+
+    &-Apple-images {
+        position: absolute;
+        top: 10vh;
+        left: 29vw;
+        animation: animate 5s linear;
+    }
+
+}
+@keyframes animate {
+    0% {
+        z-index: 10;
+        position: absolute;
+        top: 10vh;
+        transform: translateX(20px);
+    }
+    10%{
+        z-index: 10;
+        position: absolute;
+        top: 30vh;
+    }
+    20%{
+        z-index: 10;
+        position: absolute;
+        top: 50vh;
+        transform: translateX(-20px) ;
+    }
+    40%{
+        z-index: 10;
+        position: absolute;
+        top: 70vh;
+        transform: translateX(-20px) ;
+    }
+    60%{
+        z-index: 10;
+        position: absolute;
+        top: 80vh;
+        transform: translateX(20px) ;
+    }
+}
+
+
+.Apple {
+
+    &-image {
+        width: 30px;
+        margin-bottom: 10px;
+    }
+
+}
+
+
+  
+@keyframes shake {
+0% { transform: translate(1px, 1px) rotate(0deg); }
+10% { transform: translate(-1px, -2px) rotate(-1deg); }
+20% { transform: translate(-3px, 0px) rotate(1deg); }
+30% { transform: translate(3px, 2px) rotate(0deg); }
+40% { transform: translate(1px, -1px) rotate(1deg); }
+50% { transform: translate(-1px, 2px) rotate(-1deg); }
+60% { transform: translate(-3px, 1px) rotate(0deg); }
+70% { transform: translate(3px, 1px) rotate(-1deg); }
+80% { transform: translate(-1px, -1px) rotate(1deg); }
+90% { transform: translate(1px, 2px) rotate(0deg); }
+100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+
+
+
+.Basket {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(169, 233, 169);
+
+    &-image {
+        width: 300px;
+    }
+
+}
