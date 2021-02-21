@@ -1,14 +1,7 @@
-.change-state {
-    position: absolute;
-    left: 0;
-}
-
-
-
-
-
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -39,7 +32,7 @@
     #APPLE {
         position: absolute;
         top: 10vh;
-        left: 29vw;
+        left: 50%;
     }
 
     &-Apple-images {
@@ -57,7 +50,6 @@
         z-index: 10;
         position: absolute;
         top: 10vh;
-        transform: translateX(20px);
         left: 30%;
     }
     10%{
@@ -71,25 +63,24 @@
         position: absolute;
         left: 30%;
         top: 50vh;
-        transform: translateX(-20px) ;
     }
     40%{
         z-index: 10;
         position: absolute;
         left: 30%;
         top: 70vh;
-        transform: translateX(-20px) ;
     }
     60%{
         z-index: 10;
         position: absolute;
         left: 30%;
         top: 80vh;
-        transform: translateX(20px) ;
     }
     100%{
         z-index: -1;
+        left: 10%;
         position: absolute;
+        top: 85vh;
     }
 }
 
@@ -136,8 +127,13 @@
 
     #APPLE {
         position: absolute;
+        display: flex;
         top: 10vh;
-        left: 15vw;
+        left: 5%;
+
+        img {
+            width: 70px;
+        }
     }
 
 }

@@ -17,6 +17,7 @@ class AppleBasket extends Component {
 
                     
                     apples.apples.map(apple => {
+                        
                         return (
                             <Apple 
                                 key={apple.id}

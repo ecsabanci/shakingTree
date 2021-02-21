@@ -39,8 +39,6 @@ class App extends Component {
       <div className="container">        
         <Tree apples={this.state} changeState={this.changeState.bind(this)} />
         <AppleBasket apples={this.state} />
-  
-        {console.log("isShaked",this.state.isShaked)}
       </div>
     );
   }

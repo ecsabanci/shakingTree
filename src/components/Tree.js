@@ -21,22 +21,12 @@ class Tree extends Component {
         this.setState({
             isShaked: !this.state.isShaked
         })
-        
-
-        if(this.state.isShaked){
-            document.querySelector(".Tree").classList.add("Tree-shake");
-    
-            setTimeout(() => {
-              document.querySelector(".Tree").classList.remove("Tree-shake")
-              
-            }, 3000);
-        }
 
     }
 
     componentDidUpdate(){
 
-        if(!this.state.isShaked){
+        if(this.state.isShaked){
 
            const treeAppleImage = document.querySelector("#APPLE");
            const individualApples = treeAppleImage.childNodes;
@@ -56,7 +46,7 @@ class Tree extends Component {
         
         return (
         
-            <div className="Tree">
+            <div className={this.state.isShaked ? "Tree Tree-shake" : "Tree"}>
                 <button onClick={this.shakeTree.bind(this)}>Shake tree</button>
 
                 
@@ -70,7 +60,7 @@ class Tree extends Component {
                         ""
                         :
 
-                        apples.apples.map(apple => {
+                        apples.apples.map((apple,index) => {
                             return (
                                 <Apple 
                                     key={apple.id}
@@ -78,6 +68,7 @@ class Tree extends Component {
                                     name={apple.name}
                                 />
                             )
+
                         }) 
                     }
                 </div>
