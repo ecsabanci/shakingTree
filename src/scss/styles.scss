@@ -1,3 +1,12 @@
+.change-state {
+    position: absolute;
+    left: 0;
+}
+
+
+
+
+
 * {
     box-sizing: border-box;
 }
@@ -31,9 +40,6 @@
         position: absolute;
         top: 10vh;
         left: 29vw;
-        :first-child{
-            width: 40px;
-        }
     }
 
     &-Apple-images {
@@ -81,6 +87,10 @@
         top: 80vh;
         transform: translateX(20px) ;
     }
+    100%{
+        z-index: -1;
+        position: absolute;
+    }
 }
 
 
@@ -122,6 +132,12 @@
 
     &-image {
         width: 300px;
+    }
+
+    #APPLE {
+        position: absolute;
+        top: 10vh;
+        left: 15vw;
     }
 
 }

@@ -7,21 +7,21 @@ import Apple from "./Apples";
 
 class Tree extends Component {
 
-    constructor(props){
-        super(props);
-
-        this.state = {
-            isShaked: false
-        }
+    state = {
+        isShaked: this.props.apples.isShaked
     }
 
+
     shakeTree(){
-        
+
+        setTimeout(() => {
+            this.props.changeState();
+        }, 6000);
+
         this.setState({
             isShaked: !this.state.isShaked
         })
-
-        console.log(this.state.isShaked)
+        
 
         if(this.state.isShaked){
             document.querySelector(".Tree").classList.add("Tree-shake");
@@ -35,6 +35,7 @@ class Tree extends Component {
     }
 
     componentDidUpdate(){
+
         if(!this.state.isShaked){
 
            const treeAppleImage = document.querySelector("#APPLE");
@@ -52,28 +53,33 @@ class Tree extends Component {
     render() {
         
         let {apples} = this.props;
-        // const apples = document.querySelector(".Tree").childNodes
-        // const [head, ...tail] = apples
-
         
         return (
         
             <div className="Tree">
                 <button onClick={this.shakeTree.bind(this)}>Shake tree</button>
+
+                
+                
                 <img className="Tree-image" src={tree} alt=""/>
 
                 <div id="APPLE">
-                {
-                    apples.map(apple => {
-                        return (
-                            <Apple 
-                                key={apple.id}
-                                id={apple.id}
-                                name={apple.name}
-                            />
-                        )
-                    })
-                }
+                    {   
+                        apples.isShaked ?
+                        
+                        ""
+                        :
+
+                        apples.apples.map(apple => {
+                            return (
+                                <Apple 
+                                    key={apple.id}
+                                    id={apple.id}
+                                    name={apple.name}
+                                />
+                            )
+                        }) 
+                    }
                 </div>
             </div>
             

@@ -1,17 +1,13 @@
 import './scss/styles.scss';
+import React, { Component } from 'react'
 import Tree  from "./components/Tree";
 
 import AppleBasket from './components/AppleBasket';
 
-function App() {
+class App extends Component {
 
-  // console.log(document.querySelector(".Tree"))
-  // const apples = document.querySelector(".Tree").childNodes
-  // const [head, ...tail] = apples;
-  // console.log(head)
-  // console.log(tail);
-
-  let state = {
+  state = {
+    isShaked: false,
     apples: [
         {
             id: 1,
@@ -30,17 +26,25 @@ function App() {
             name: "apple-4"
         }
     ]
-}
+  } 
 
+  changeState(){
+    this.setState({
+      isShaked: true
+    })
+  }
 
+  render(){
+    return (
+      <div className="container">        
+        <Tree apples={this.state} changeState={this.changeState.bind(this)} />
+        <AppleBasket apples={this.state} />
+  
+        {console.log("isShaked",this.state.isShaked)}
+      </div>
+    );
+  }
 
-  return (
-    <div className="container">
-      {console.log(state.isShaked)}
-      <Tree apples={state.apples} />
-      <AppleBasket />
-    </div>
-  );
 }
 
 export default App;
