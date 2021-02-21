@@ -31,6 +31,9 @@
         position: absolute;
         top: 10vh;
         left: 29vw;
+        :first-child{
+            width: 40px;
+        }
     }
 
     &-Apple-images {
@@ -41,33 +44,40 @@
     }
 
 }
+
+
 @keyframes animate {
     0% {
         z-index: 10;
         position: absolute;
         top: 10vh;
         transform: translateX(20px);
+        left: 30%;
     }
     10%{
         z-index: 10;
         position: absolute;
         top: 30vh;
+        left: 30%;
     }
     20%{
         z-index: 10;
         position: absolute;
+        left: 30%;
         top: 50vh;
         transform: translateX(-20px) ;
     }
     40%{
         z-index: 10;
         position: absolute;
+        left: 30%;
         top: 70vh;
         transform: translateX(-20px) ;
     }
     60%{
         z-index: 10;
         position: absolute;
+        left: 30%;
         top: 80vh;
         transform: translateX(20px) ;
     }

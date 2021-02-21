@@ -29,7 +29,7 @@ class Tree extends Component {
             setTimeout(() => {
               document.querySelector(".Tree").classList.remove("Tree-shake")
               
-            }, 1500);
+            }, 3000);
         }
 
     }
@@ -38,14 +38,13 @@ class Tree extends Component {
         if(!this.state.isShaked){
 
            const treeAppleImage = document.querySelector("#APPLE");
+           const individualApples = treeAppleImage.childNodes;
 
-           setTimeout(() => {
-            treeAppleImage.classList.add("Tree-Apple-images");
-           }, 3000);
-
-           setTimeout(() => {
-               treeAppleImage.classList.remove("Tree-Apple-images");
-           }, 5000);
+           individualApples.forEach((apple,index) => {
+            setTimeout(() => {
+                apple.classList.add("Tree-Apple-images");
+            }, 1000*(index+1));
+           });
 
         }
     }
