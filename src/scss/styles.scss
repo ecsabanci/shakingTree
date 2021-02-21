@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+body {
+    background: rgb(169, 233, 169);
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -22,6 +26,22 @@
     width: 550px;
     height: 550px;
     background-color: rgb(169, 233, 169);
+
+    &-shake-button {
+        border-radius: 10px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        width: 30vw;
+        margin: 0 auto;
+        padding: 10px;
+
+        &:active {
+            transform: scale(0.95);
+        }
+        &:focus {
+            outline: none;
+        }
+    }
 
 
     &-shake {

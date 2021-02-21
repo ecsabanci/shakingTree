@@ -47,7 +47,7 @@ class Tree extends Component {
         return (
         
             <div className={this.state.isShaked ? "Tree Tree-shake" : "Tree"}>
-                <button onClick={this.shakeTree.bind(this)}>Shake tree</button>
+                <button className="Tree-shake-button" onClick={this.shakeTree.bind(this)}>Shake tree</button>
 
                 
                 
@@ -60,7 +60,7 @@ class Tree extends Component {
                         ""
                         :
 
-                        apples.apples.map((apple,index) => {
+                        apples.apples.map((apple) => {
                             return (
                                 <Apple 
                                     key={apple.id}
